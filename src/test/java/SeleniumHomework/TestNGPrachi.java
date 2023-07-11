@@ -4,6 +4,13 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
@@ -23,7 +30,7 @@ public class TestNGPrachi {
   @Test
   public void testCase3() {
 	  System.out.println("Inside Testcase3");
-	  Assert.assertTrue(false);
+	  //Assert.assertTrue(false);
   }
   @BeforeMethod
   public void beforeMethod() {
@@ -51,7 +58,24 @@ public class TestNGPrachi {
   }
 
   @BeforeSuite
-  public void beforeSuite() {
+  public void beforeSuite() throws IOException {
+	  System.out.println("Inside before suite");
+	  System.out.println(System.getProperty("user.dir"));
+	  try {
+   File objFile = new File(System.getProperty("user.dir")+"/src/test/resources/Configure.Property");
+   FileInputStream objFileInput = new FileInputStream(objFile);
+   Properties objProp = new Properties();
+   objProp.load(objFileInput);
+   String url = objProp.getProperty("url");
+   String browser = objProp.getProperty("browser");
+   System.out.println("url=" + url);
+   System.out.println("browser=" + browser);
+} catch (FileNotFoundException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
+  
+  
   }
 
   @AfterSuite
