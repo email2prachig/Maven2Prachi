@@ -1,4 +1,4 @@
-package SeleniumHomework;
+package com.SeleniumPrachi;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

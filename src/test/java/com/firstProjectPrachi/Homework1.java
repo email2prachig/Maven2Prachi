@@ -1,4 +1,4 @@
-package firstProject;
+package com.firstProjectPrachi;
 
 public class Homework1 {
 

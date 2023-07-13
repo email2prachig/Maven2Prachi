@@ -1,2 +1,5 @@
-browser = chrome
-url = "https://www.amazon.com/"
+browser = Chrome
+application = amazon
+nextGenAcademy = https://nxtgenaiacademy.com/multiplewindows/
+textMsgWindow = Welcome to Vinoth Rathinam Tutorials. Happy Learning
+newTabNextGen = https://nxtgenaiacademy.com/
